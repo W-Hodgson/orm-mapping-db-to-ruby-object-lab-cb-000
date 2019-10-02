@@ -43,7 +43,9 @@ class Student
   end
 
   def self.first_student_in_grade_10
-
+    DB[:conn].execute("SELECT * FROM students WHERE grade = 10").map do |student|
+      self.new_from_db(student)
+    end.first
   end
 
   def save
