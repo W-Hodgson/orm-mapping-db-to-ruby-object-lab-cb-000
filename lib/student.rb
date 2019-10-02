@@ -27,9 +27,7 @@ class Student
   end
 
   def self.all_students_in_grade_9
-    DB[:conn].execute("SELECT * FROM students WHERE grade = 9").map do |student|
-      self.new_from_db(student)
-    end
+    DB[:conn].execute("SELECT * FROM students WHERE grade = 9")
   end
 
   def save
