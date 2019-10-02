@@ -27,7 +27,7 @@ class Student
   end
 
   def self.all_students_in_grade_9
-
+    DB[:conn].execute("")
   end
 
   def save
